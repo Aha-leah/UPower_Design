@@ -46,30 +46,30 @@ if (!fs.existsSync(projectsDir)) {
 if (!fs.existsSync(targetDir)) {
   console.log(`🚀 Scaffolding new project: ${projectName}...`);
   try {
-    // Run npm create vite
-    execSync(`npm create vite@latest ${projectName} -- --template react-ts`, {
+    // Run bun create vite
+    execSync(`bun create vite ${projectName} --template react-ts`, {
       cwd: projectsDir,
       stdio: 'inherit'
     });
     
     // Install dependencies (optional, but good for UX)
     console.log('📦 Installing dependencies...');
-    execSync('npm install', {
+    execSync('bun install', {
       cwd: targetDir,
       stdio: 'inherit'
     });
     
     // Install standard UI libs
     console.log('🎨 Installing UI libraries (lucide-react, framer-motion, clsx, tailwind-merge)...');
-    execSync('npm install lucide-react framer-motion clsx tailwind-merge', {
+    execSync('bun add lucide-react framer-motion clsx tailwind-merge', {
       cwd: targetDir,
       stdio: 'inherit'
     });
 
     // Install Tailwind (Standard Vite approach)
     console.log('🌬️ Initializing Tailwind CSS...');
-    execSync('npm install -D tailwindcss postcss autoprefixer', { cwd: targetDir, stdio: 'inherit' });
-    execSync('npx tailwindcss init -p', { cwd: targetDir, stdio: 'inherit' });
+    execSync('bun add -D tailwindcss postcss autoprefixer', { cwd: targetDir, stdio: 'inherit' });
+    execSync('bunx tailwindcss init -p', { cwd: targetDir, stdio: 'inherit' });
 
   } catch (error) {
     console.error('❌ Failed to create project:', error);

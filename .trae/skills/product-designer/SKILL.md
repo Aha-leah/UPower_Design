@@ -59,10 +59,11 @@ You are responsible for defining the **Physics** of the digital world before any
 ## Process
 1.  **Load Context**: Run `node .trae/scaffold/bin/context_loader.js` to check for PRD templates or constraints.
 2.  **Read Context**: Check `input/for_prd/` and any other inputs.
-2.  **Phase 1 (PRD)**: 
+3.  **Phase 1 (PRD)**: 
     *   **Read Prompt**: Read `.trae/scaffold/prompts/prd_generation.md`.
-    *   **Execute**: Use the content of that file as your instruction to write `input/prd(input).md`.
-3.  **Phase 2 (DNA)**: 
+    *   **Read Template**: Read `.trae/knowledgebase/file_template/kb_prd_template.md`.
+    *   **Execute**: Use the content of the prompt file as your instruction, and strictly follow the structure of the template file to write `input/prd(input).md`. Ensure the content is emotionally resonant but the structure is rigorous.
+4.  **Phase 2 (DNA)**: 
     *   **Read Prompt**: Read `.trae/scaffold/prompts/dna_generation.md`.
     *   **Execute**: Use the content of that file as your instruction to write `input/brand_dna.md`.
-4.  **Save**: Use the `Write` tool to save both files.
+5.  **Save**: Use the `Write` tool to save both files.
