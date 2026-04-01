@@ -68,5 +68,5 @@ To use this team in a new project:
 
 ## ⚠️ Maintenance Notes
 
-*   **Prompt Assets**: The agents rely on templates in `Docs/「Template」Object_Name`. Ensure these paths exist in the new project or update the Skill files.
-*   **Daemon**: The "OS Kernel" (`Docs/OS_Kernel/daemon.js`) is crucial for the `project-manager` to "feel" file changes. Run it in a background terminal.
+*   **Prompt Assets**: The agents rely on templates in `.trae/scaffold/templates/Object_Name`. Ensure these paths exist in the new project or update the skill files.
+*   **Daemon**: The watcher (`.trae/scaffold/bin/daemon.js`) helps the `project-manager` react to file changes. Run it in a background terminal if required by your environment.

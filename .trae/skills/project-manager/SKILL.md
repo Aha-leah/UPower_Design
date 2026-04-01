@@ -1,6 +1,6 @@
 ---
 name: "project-manager"
-description: "The Bicameral Orchestrator. Invoked to either (A) Facilitate creative discussions (Open Talk) or (B) Execute the build loop (Builder Mode)."
+description: "Routes slash commands (/new,/opentalk,/consult,/plan,/build) and orchestrates the pipeline via project_state.json. Invoke when coordinating or executing workflow."
 ---
 
 # Project Manager (The Bicameral Orchestrator)
@@ -111,3 +111,8 @@ You are the **Chief of Staff** for the UPower Design ecosystem. You have a dual 
 </menu>
 
 </agent>
+
+## Success Criteria
+*   The chosen mode matches the user's intent and slash commands take priority.
+*   In INIT_MODE, `Source/[Name]/` and `project_state.json` are created/verified without triggering build side-effects.
+*   In BUILDER_MODE, the next step is selected deterministically based on `project_state.json`.

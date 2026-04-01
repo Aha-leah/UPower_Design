@@ -38,6 +38,8 @@ Use these commands when you are ready to execute.
 | **/new [Name]** | **Initialize**. Scaffolds a new project folder `Source/[Name]` and prepares the environment. |
 | **/build** | **Execute Manifest**. Atlas reads `project_state.json` and triggers the next step in the pipeline. |
 | **/plan** | **Show Status**. Displays the current project phase and missing assets. |
+| **/hero** | **Key Frame First**. Build/preview the Hero section only (fast visual validation). |
+| **/pack [Version] [TargetPath]** | **Package Release**. Produce a version pack with exclusions applied (skips snapshots and global-only meta skills). |
 | **/freeze** | **Emergency Stop**. Halts the current operation. |
 
 ### 🔄 Manual Override (Step-by-Step)

@@ -1,4 +1,4 @@
-# UPower Design 2.2
+# UPower Design 2.3
 
 **A Multi-Agent AI Team for Automated Design Engineering**
 
@@ -6,7 +6,7 @@
 
 ---
 
-## ⚠️ Runtime Dependency & Evaluation Guide
+## ⚠️ Runtime Dependency & Evaluation Guide (评委体验必读)
 
 ### English
 **UPower Design is native to Trae IDE.** 
@@ -24,7 +24,7 @@ The multi-agent workflow, `Skill` orchestration, and `.trae/rules` auto-injectio
 
 ## English
 
-This repository contains the configuration and workflow logic for **UPower Design 2.2** — an AI-native meta-framework that turns abstract ideas into production-ready frontend code through a simulated team of experts.
+This repository contains the configuration and workflow logic for **UPower Design 2.3** — an AI-native meta-framework that turns abstract ideas into production-ready frontend code through a simulated team of experts.
 
 ## 0. The Collaborative Workflow (Agent Team)
 
@@ -77,6 +77,7 @@ We use a slash-command system to interact with the squad. See `.trae/skills/COMM
   - `/build` (explicit execution only)
   - `/plan`
   - `/hero` (preview hero key frame)
+  - `/pack [Version] [TargetPath]` (package a release folder)
 
 ## 2. Squad Roster
 
@@ -124,7 +125,23 @@ We use a slash-command system to interact with the squad. See `.trae/skills/COMM
 
 # Changelog
 
-## v2.2 - Open Source Packaging (Current)
+## v2.3 - Skill Spec Standardization (Current)
+- **What changed (结构调整点)**:
+  - Standardized every core skill to use a predictable contract: **frontmatter `description` includes “when to invoke” + expected outputs**, plus a verifiable **Success Criteria** section.
+  - Reduced fragile, environment-specific wording (e.g., tool names that may not exist outside Trae); kept instructions executable as “actions + outputs”.
+  - Refreshed packaging rules to exclude global-only/meta references and common build artifacts.
+- **Impact (影响)**:
+  - Skills trigger more reliably (less under-triggering due to vague descriptions).
+  - Evaluators can verify outcomes deterministically by checking outputs listed in Success Criteria, rather than “vibe-based” judging.
+  - Lower risk of “some entries don’t work” caused by non-parsable or inconsistent specs.
+- **Benefits (利好)**:
+  - Clearer auditability: each role has a testable input/output contract.
+  - Easier team iteration: contributors know exactly where to add triggers vs. where to add process steps.
+  - Better demo stability: fewer surprises across different runtime environments.
+- **Roadmap note**:
+  - Deferred scenario workflow skills (e.g., `web-maker-工作流`) to v3.0 for dedicated, scenario-based bundles.
+
+## v2.2 - Open Source Packaging
 - Added English + 中文 README for GitHub-ready distribution.
 - Clarified Bob’s MCP bridge (Figma extraction, image download, image generation).
 - Added release packaging checklist template in knowledgebase.
@@ -141,7 +158,7 @@ We use a slash-command system to interact with the squad. See `.trae/skills/COMM
 
 ## 中文
 
-本仓库包含 **UPower Design 2.2** 的配置与工作流逻辑：用一支“模拟的多 Agent 团队”，把抽象需求转成可交付的前端页面，并在过程中留下可追溯资产。
+本仓库包含 **UPower Design 2.3** 的配置与工作流逻辑：用一支“模拟的多 Agent 团队”，把抽象需求转成可交付的前端页面，并在过程中留下可追溯资产。
 
 ## 0. 协作工作流（Concierge + Builder）
 
@@ -152,7 +169,7 @@ We use a slash-command system to interact with the squad. See `.trae/skills/COMM
 命令清单见 `.trae/skills/COMMAND_LIST.md`。
 
 - Concierge（对齐讨论）：`/opentalk`、`/consult`、`/brainstorm`
-- Builder（显式执行）：`/new`、`/build`、`/plan`、`/hero`
+- Builder（显式执行）：`/new`、`/build`、`/plan`、`/hero`、`/pack`
 
 ## 2. 团队角色（Squad）
 
