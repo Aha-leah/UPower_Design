@@ -26,17 +26,18 @@ The multi-agent workflow, `Skill` orchestration, and `.trae/rules` auto-injectio
 
 This repository contains the configuration and workflow logic for **UPower Design 3.3** — an AI-native meta-framework that turns abstract ideas into production-ready frontend code through a structured multi-agent pipeline with quality assurance built in.
 
-## What's New in v3.1
+## What's New in v3.3
 
 | Change | Impact |
 |---|---|
 | **Agent = Persona + Skill Group** | Roles focus on decisions & style; procedural details moved to Action layer |
 | **Structured Plan → Steps pipeline** | Supervisor generates Plan(JSON), CLI layer translates to Steps(JSON) — reproducible & auditable |
 | **Stop Conditions** | Ambiguous input triggers mandatory user clarification — no more guessing |
+| **Knowledgebase + Schemas** | Templates + JSON schemas make assets portable, verifiable, and easier to maintain |
 | **Automated QA Review** | Visual + Interaction quality checks run after every build |
 | **GUI Cockpit spec** | Real-time visibility into phase, artifacts, evidence, and risks |
 
-## 0. Architecture (v3.1)
+## 0. Architecture (v3.3)
 
 ```mermaid
 graph LR
@@ -99,7 +100,7 @@ graph LR
    - `style_prompt.md`, `design_system_specs.md`, `animation_prompts.md`, `skeleton_template.json`, `web_content.js`
 4. **Assemble**: Compile all assets into `system_prompt.md`
 5. **Build**: Generate React + TypeScript + Tailwind application in `projects/<ProjectName>/`
-6. **Audit**: Auto-run Visual & Interaction Reviewer → structured report
+6. **Audit**: Auto-run Visual & Interaction QA checks → structured report
 
 ## 4. Key Specifications
 
@@ -162,7 +163,8 @@ See: `.trae/knowledgebase/file_template/kb_reviewer_checklist_*.md`
 │   │   ├── kb_reviewer_checklist_visual_common.md      # Visual rules
 │   │   └── kb_reviewer_checklist_interaction_common.md # Interaction rules
 │   ├── kb_common_assets_maintenance_guide.md   # Maintenance guide
-│   └── v31_demo_evidence_moments.md            # Demo evidence
+│   ├── guide.md                         # Getting started guide
+│   └── kb_skill_rewrite_spec.md         # Skill rewrite spec
 └── JOURNAL.md                      # Demo flow record
 ```
 
@@ -190,7 +192,13 @@ See: `.trae/knowledgebase/kb_common_assets_maintenance_guide.md`
 
 # Changelog
 
-## v3.1 - Structured Pipeline & Quality Assurance (Current)
+## v3.3 - Open Source Packaging & Workflow Hardening (Current)
+- **Knowledgebase**: Added schemas + templates for PRD/DNA/style/specs/motion/payload assets
+- **Rules**: Expanded `.trae/rules` for Plan/Steps, Cockpit, QA integration, and supervisor boundaries
+- **Skills**: Added references/examples for core skills; refreshed skill spec structure
+- **Docs**: Clarified runtime dependency & usage; standardized QA wording
+
+## v3.1 - Structured Pipeline & Quality Assurance
 - **Architecture**: Supervisor → CLI Translator → Action Runner pipeline (Plan/Steps/Observations)
 - **Persona Optimization**: Alice PoC — stripped procedural details, added Decision Heuristics + Stop Conditions + Functional API
 - **PRD System**: Executable PRD template with completeness validation, Gold Standard example, multi-terminal appendixes (Web/Mobile/Landing/Desktop)
@@ -218,17 +226,18 @@ See: `.trae/knowledgebase/kb_common_assets_maintenance_guide.md`
 
 本仓库包含 **UPower Design 3.3** 的配置与工作流逻辑：用一支"模拟的多 Agent 团队"，把抽象需求转成可交付的前端页面，并在过程中留下可追溯的结构化证据链。
 
-## v3.1 核心变化
+## v3.3 核心变化
 
 | 变化 | 影响 |
 |---|---|
 | **Agent = Persona + Skill Group** | 角色专注决策与风格；流程细节归 Action 层 |
 | **结构化 Plan → Steps 管线** | Supervisor 生成 Plan(JSON)，CLI 层转译为 Steps(JSON)——可回放、可审计 |
 | **Stop Conditions** | 模糊输入触发强制追问——禁止猜测执行 |
-| **自动 Reviewer** | 每次构建后自动运行 Visual + Interaction 质检 |
+| **通识知识库 + Schema** | 用模板 + JSON Schema 标准化资产结构，便于维护与复用 |
+| **自动质检（QA Review）** | 每次构建后自动运行 Visual + Interaction 质检 |
 | **GUI Cockpit 规范** | 实时可见：阶段、产物、证据、风险 |
 
-## 0. 架构（v3.1）
+## 0. 架构（v3.3）
 
 ```mermaid
 graph LR
@@ -275,7 +284,7 @@ graph LR
 5. "生成设计资产"                → 5 个设计资产文件
 6. "组装 system prompt"         → 编译 system_prompt.md
 7. /build                       → 生成 React 应用
-8. (自动)                       → Visual + Interaction 审核
+8. (自动)                       → Visual + Interaction 质检
 ```
 
 ## 4. 质量保障
