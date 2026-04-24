@@ -2,7 +2,7 @@
 
 **A Multi-Agent AI Team for Automated Design Engineering**
 
-[English](#english) | [中文](#中文)
+[English](#readme-en) | [中文](#readme-zh)
 
 ---
 
@@ -21,6 +21,8 @@ The multi-agent workflow, `Skill` orchestration, and `.trae/rules` auto-injectio
 - **其他 IDE（Cursor / VS Code）：** 可体验 UPower 的核心价值——**"资产证据链"**。让 AI 读取 `Source/` 目录下的结构化文档作为高质量上下文辅助编码。
 
 ---
+
+<a id="readme-en"></a>
 
 ## English
 
@@ -221,6 +223,8 @@ See: `.trae/knowledgebase/kb_common_assets_maintenance_guide.md`
 - Unified Concierge + Builder command protocol, MCP integration
 
 ---
+
+<a id="readme-zh"></a>
 
 ## 中文
 
