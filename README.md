@@ -8,13 +8,13 @@
 
 ## ⚠️ Runtime Dependency & Usage Guide（运行依赖与使用指南）
 
-### English
+### Runtime Notes (EN)
 **UPower Design runs on Trae IDE and OpenCode.**
 The multi-agent workflow, `Skill` orchestration, and `.trae/rules` auto-injection rely on IDE-native agent capabilities.
 - **Full Experience (Trae / OpenCode):** Open this project in **Trae IDE** or **OpenCode** to experience the complete Agent team.
 - **Other IDEs (Cursor / VS Code):** You can still experience UPower's core value — **"Evidence Chain"**. Point your IDE's AI to the `Source/` directory to read the structured offline assets (`brand_dna.md`, `system_prompt.md`) as high-quality context for coding.
 
-### 中文
+### 运行说明（中文）
 **UPower Design 支持 Trae IDE 和 OpenCode。**
 多智能体协作、`Skill` 调度和 `.trae/rules` 规则注入依赖 IDE 原生 Agent 能力。
 - **完整体验（推荐 Trae / OpenCode）：** 使用 **Trae IDE** 或 **OpenCode** 打开本项目即可唤醒团队。
