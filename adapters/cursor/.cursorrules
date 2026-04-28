@@ -1,0 +1,39 @@
+# UPower Design Rules for Cursor
+# UPower-Version: 3.4.1-cursor.1
+# Adapter: cursor
+# Installed-By: upower-cursor-adapter
+# Install-Hint: bash adapters/cursor/install.sh
+
+> This file configures Cursor AI to understand UPower slash commands.
+
+## Available Slash Commands
+
+### /new [Name]
+Initialize a new UPower project.
+**Steps to execute**:
+1. Find UPower root (the directory containing `upower.js` or `scaffold/`)
+2. Run in terminal: `node <upower_root>/upower.js scaffold --root <current_project_root> --name [Name]`
+3. Verify `Source/[Name]/` was created with `input/` subdirectory
+4. Confirm to user: "✅ Project [Name] initialized"
+
+### /build
+Execute the manifest-driven build pipeline.
+Read `Source/[Name]/project_state.json` → execute the next phase.
+
+### /plan
+Show current project state and next steps.
+
+### /opentalk [Topic]
+Start a multi-agent discussion session.
+
+## Project Root Convention
+
+- Source assets: `Source/[Name]/`
+- Built output: `projects/[Name]/`
+- UPower scripts: `<upower_root>/upower.js`
+
+## Never
+
+- Auto-build without explicit `/build` command
+- Modify files in `projects/` directly
+- Skip `project_state.json` status check
