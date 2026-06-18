@@ -6,14 +6,14 @@
 
 1. Ensure UPower is installed (clone or copy the UPower package somewhere accessible)
 2. Place this file in your project root
-3. Tell Claude the UPower root path when prompted
+3. Ensure `.upower/` exists in your project root (copy it in if needed)
 
 ## Slash Commands
 
 ### /new [Name]
 Initialize a new UPower project from template.
 ```bash
-node <upower_root>/upower.js scaffold --root <cwd> --name [Name]
+node .upower/upower.js scaffold --root <project_root> --name [Name]
 ```
 Creates `Source/[Name]/` with standard template structure.
 
@@ -45,5 +45,5 @@ Source/[Name]/
 
 ## Notes
 
-- UPower Root = the directory containing `upower.js` and `core/`
+- UPower Root = the project directory containing `.upower/upower.js`
 - Never manually edit generated files in `projects/`

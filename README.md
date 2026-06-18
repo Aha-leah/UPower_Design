@@ -82,6 +82,12 @@ cp -r .upower/ <your_project>/
 cp adapters/vscode/CLAUDE.md <your_project>/CLAUDE.md
 ```
 
+**Verification (VSCode + Claude)**: from your project root, run:
+```bash
+node .upower/upower.js scaffold --root . --name Demo
+```
+You should see `Source/Demo/` created.
+
 ## 2. CLI Reference
 
 ```bash
