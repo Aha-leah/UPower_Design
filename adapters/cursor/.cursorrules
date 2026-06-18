@@ -1,8 +1,4 @@
 # UPower Design Rules for Cursor
-# UPower-Version: 3.4.1-cursor.1
-# Adapter: cursor
-# Installed-By: upower-cursor-adapter
-# Install-Hint: bash adapters/cursor/install.sh
 
 > This file configures Cursor AI to understand UPower slash commands.
 

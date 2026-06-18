@@ -43,7 +43,7 @@ When invoked:
 
 - `/new [Name]` - Initialize project skeleton only. **Never auto-build.**
   **Execution (Trae)**:
-  1. UPower root = `.trae/` parent directory (project root)
-  2. Run: `node .trae/scaffold/bin/scaffold_project.js --root <project_root> --name [Name]`
+  1. UPower root = project root (the directory that contains `.upower/`)
+  2. Run: `node .upower/upower.js scaffold --root <project_root> --name [Name]`
   3. Verify `Source/[Name]/input/` exists with template files
   4. Report: `✅ Project [Name] initialized at Source/[Name]/`
